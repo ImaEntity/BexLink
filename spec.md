@@ -17,7 +17,7 @@
 | Bit | Meaning |
 |-----|---------|
 | 0   | If set, file is a linkable library. |
-| 1   | If set, ***must*** be loaded at the base address. (due to missing relocations) |
+| 1   | If set, the file cannot be relocated. |
 | 2–7 | Reserved for future use. |
 
 ---
