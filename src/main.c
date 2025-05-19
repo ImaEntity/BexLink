@@ -1,6 +1,3 @@
-// simple linker that uses object files (the COFF format)
-// and links them into a BEX file
-
 #include "./include/types.h"
 #include "./include/bex.h"
 
@@ -57,10 +54,8 @@ void CRTBootstrapper() {
 
     int idx = 1;
     while(idx < argc) {
-        if(CompareStr(argv[idx], L"-e"))
-            entrySymbol = nextArg(argc, argv, ++idx);
-        else if(CompareStr(argv[idx], L"-o"))
-            outputFile = nextArg(argc, argv, ++idx);
+        if(CompareStr(argv[idx], L"-e"))      entrySymbol = nextArg(argc, argv, ++idx);
+        else if(CompareStr(argv[idx], L"-o")) outputFile  = nextArg(argc, argv, ++idx);
         else
             inputFileNames[inputFileCount++] = argv[idx];
 
@@ -88,8 +83,7 @@ void CRTBootstrapper() {
         if(inputFiles[i] == INVALID_HANDLE_VALUE)
             error(L"Failed to open input file!");
     }
-
     
-
+    LocalFree(inputFiles);
     ExitProcess(0);
 }
