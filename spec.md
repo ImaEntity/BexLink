@@ -17,7 +17,7 @@
 | Bit | Meaning |
 |-----|---------|
 | 0   | If set, file is a linkable library. |
-| 1   | If set, must be loaded at the base address. |
+| 1   | If set, ***must*** be loaded at the base address. (due to missing relocations) |
 | 2–7 | Reserved for future use. |
 
 ---
@@ -61,3 +61,6 @@
 | 0   | If set, describes an absolute address. |
 | 1   | If set, refers to an external file. |
 | 2–7 | Reserved for future use. |
+
+## Support
+A header for C/C++ support is avalible here: [<u>bex.h</u>](https://github.com/ImaEntity/BexLink/blob/main/src/include/bex.h)
