@@ -1,5 +1,6 @@
 #include "./include/types.h"
 #include "./include/bex.h"
+#include "./include/coff.h"
 
 #include <windows.h>
 
